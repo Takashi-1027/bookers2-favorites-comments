@@ -31,7 +31,7 @@
             <%= f.submit 'Update Book', class: "btn btn-primary col-md-10" %>
           </div>
           <br>
-          <td><%= link_to "Show", book_path %></td>
+          <td><%= link_to "Show", book_path(@book) %></td>
           <td>|</td>
           <td><%= link_to "Back", books_path %></td>
         <% end %>
