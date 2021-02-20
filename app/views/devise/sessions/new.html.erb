@@ -1,3 +1,11 @@
+<!--session controllerを作成したときに書いたコード ここから-->
+<% if flash[:notice] %>
+<p class="notice"><%= notice %></p>
+<% end %>
+<% if flash[:alert] %>
+<p class="alert"><%= alert %></p>
+<% end %>
+<!--ここまで-->
   <div class="container">
     <div class="row">
       <div class="col-md-3">

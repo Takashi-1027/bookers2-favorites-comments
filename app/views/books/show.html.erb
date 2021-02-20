@@ -19,7 +19,7 @@
 		    		</thead>
 		    		<tbody>
 						<tr>
-				      		<td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 90, 100, format:'jpeg', fallback: "no_image.jpg" %>
+				      		<td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 90, 100, format:'jpeg', fallback: "no_image.jpg", size:'40x40'  %><br>
 				      		<%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
 
 				        	<td><%= link_to @bookdetail.title, book_path(@bookdetail.id) %></td>
