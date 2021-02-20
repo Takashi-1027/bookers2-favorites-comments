@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+  # 以下の定義は定義できたが、働かない
   def new
   end
 
