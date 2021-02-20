@@ -2,6 +2,9 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_current_user, {only: [:edit,:update,:destroy]}
 
+  #def new
+  #end
+
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
@@ -55,10 +58,10 @@ class BooksController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name,:profile_image,:introduction)
+    params.require(:user).permit(:name, :profile_image, :introduction)
   end
 
-  def  ensure_current_user
+  def  ensure_current_user # 正しいユーザかを確かめるという意味
       @book = Book.find(params[:id])
      if @book.user_id != current_user.id
         redirect_to books_path
