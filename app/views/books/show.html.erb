@@ -3,6 +3,7 @@
 <div class="container px-5 px-sm-0">
       <div class="row">
     	  <div class="col-md-3">
+			  <!--<　%= render 'books/list', book: @book_new, user: @book.user %>-->
 			  <%= render 'books/list', book: @book, user: @bookdetail.user %>
 		  </div>
 		  <div class="col-md-8 offset-md-1">
@@ -30,19 +31,19 @@
               		<% end %>
 
               		<!--いいね実装-->
-              		<% if @book.favorite_by?(current_user) %>
-              			<td>
-              		 	<%= link_to book_favorites_path(@book), method: :delete do %>
-              		 		<%= @book.favorite.count %>
-              		 	<% end %>
-              			</td>
-              		<% else %>
-              			<td>
-              			<%= link_to book_favorites_path(@book), method: :post do %>
-              			　♡<%= @book.favorite.count %>いいね
-              			<% end %>
-              			</td>
-              		<% end %>
+              		<!--< % if @book.favorite_by?(current_user) %>-->
+              		<!--	<td>-->
+              		<!-- 	< %= link_to book_favorites_path(@book), method: :delete do %>-->
+              		<!-- 		< %= @book.favorite.count %>-->
+              		<!-- 	< % end %>-->
+              		<!--	</td>-->
+              		<!--< % else %>-->
+              		<!--	<td>-->
+              		<!--	< %= link_to book_favorites_path(book), method: :post do %>-->
+              		<!--	　♡< %= @book.favorite.count %>-->
+              		<!--	< % end %>-->
+              		<!--	</td>-->
+              		<!--< % end %>-->
 				     	   </tr>
 		    		    </tbody>
 		      	  </table>
