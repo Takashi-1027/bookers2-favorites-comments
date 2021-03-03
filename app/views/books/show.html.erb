@@ -27,7 +27,22 @@
 				        	<% if @bookdetail.user_id == current_user.id %>
               				<th><%= link_to "Edit", edit_book_path(@bookdetail.id), class: "btn-sm btn-success edit_book_#{@bookdetail.id}" %></th>
               				<th><%= link_to "Destroy", book_path(@bookdetail.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn-sm btn-danger destroy_book_#{@bookdetail.id}" %></th>
-              				<% end %>
+              		<% end %>
+
+              		<!--いいね実装-->
+              		<% if @book.favorite_by?(current_user) %>
+              			<td>
+              		 	<%= link_to book_favorites_path(@book), method: :delete do %>
+              		 		<%= @book.favorite.count %>
+              		 	<% end %>
+              			</td>
+              		<% else %>
+              			<td>
+              			<%= link_to book_favorites_path(@book), method: :post do %>
+              			　♡<%= @book.favorite.count %>いいね
+              			<% end %>
+              			</td>
+              		<% end %>
 				     	   </tr>
 		    		    </tbody>
 		      	  </table>
